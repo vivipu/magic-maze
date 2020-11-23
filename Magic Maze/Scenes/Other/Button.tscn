@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Button" type="TextureButton"]
+margin_right = 400.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 400, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
