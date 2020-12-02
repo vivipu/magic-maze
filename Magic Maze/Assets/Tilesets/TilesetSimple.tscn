@@ -9,6 +9,7 @@ extents = Vector2( 8, 8 )
 polygon = PoolVector2Array( -8.125, -8.125, -8, 8, 8.0625, 7.9375, 8.125, -8 )
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2( 1.35, 1.35 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.203922, 0.286275, 0.4, 1 )

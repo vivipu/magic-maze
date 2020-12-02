@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Other/Counter.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Artwork/light.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Other/Popup.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Other/Button2.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Other/Button.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Other/movecounter.gd" type="Script" id=6]
+
+[node name="Moves" type="Control"]
+margin_left = 3.0
+margin_right = 1024.0
+margin_bottom = 597.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Moves: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Counter" type="Label" parent="."]
+margin_left = 48.0
+margin_right = 57.0
+margin_bottom = 14.0
+text = "3"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="Counter"]
+visible = true
+margin_left = 285.71
+margin_top = 152.172
+margin_right = 651.71
+margin_bottom = 454.172
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Counter/Popup"]
+modulate = Color( 0.196078, 0.243137, 0.305882, 1 )
+position = Vector2( 184, 148 )
+scale = Vector2( 23, 19.125 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Counter/Popup"]
+margin_right = 366.0
+margin_bottom = 73.0
+text = "You used all of your moves!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Counter/Popup"]
+margin_left = 110.102
+margin_top = 134.347
+margin_right = 250.102
+margin_bottom = 186.347
+text = "Back to title"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = "res://Scenes/Other/TitleScreen.tscn"
+
+[node name="Button2" type="Button" parent="Counter/Popup"]
+margin_left = 110.102
+margin_top = 222.307
+margin_right = 250.102
+margin_bottom = 274.307
+text = "Retry"
+script = ExtResource( 4 )
+scene_to_load = "res://Scenes/Levels (Maps)/functionalitytest.tscn"
