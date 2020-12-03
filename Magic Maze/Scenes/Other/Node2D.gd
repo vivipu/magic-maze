@@ -1,4 +1,4 @@
-extends Popup
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -10,10 +10,4 @@ extends Popup
 func _ready():
 	pass # Replace with function body.
 
-func _on_Button_pressed():
-	get_tree().change_scene("res://Scenes/Other/TitleScreen.tscn")
 
-
-
-func _on_Button2_pressed():
-	hide()

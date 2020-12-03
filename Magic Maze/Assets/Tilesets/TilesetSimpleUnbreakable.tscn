@@ -6,13 +6,12 @@
 extents = Vector2( 8, 8 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( -7.99772, -8.03397, -7.93939, 8.00669, 7.98461, 8.00669, 7.92628, -7.97564 )
+polygon = PoolVector2Array( -7.99201, -8.02935, -7.99201, 7.96573, 8.07323, 7.96573, 8.07323, -8.02935 )
 
 [node name="Node2D" type="Node2D"]
-scale = Vector2( 1.35, 1.35 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.203922, 0.286275, 0.4, 1 )
+modulate = Color( 0.109804, 0.196078, 0.32549, 1 )
 texture = ExtResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]

@@ -16,5 +16,8 @@ func _physics_process(delta):
 		motion.x -= 0.75
 	motion = motion.normalized()
 	motion = move_and_slide(motion * movespeed)
-
+onready var counter = 5
+func kill():
+	queue_free()
+	get_tree().reload_current_scene()
 
