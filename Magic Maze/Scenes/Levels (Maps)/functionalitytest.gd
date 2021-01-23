@@ -1,46 +1,60 @@
 extends Node2D
-var counter = 5
+const tilemap = preload("res://Scenes/Levels (Maps)/functestmap.tscn")
+const pickup = preload("res://Scenes/Other/Pickup.tscn")
+var moves = 3
 var lives = 3
+var score = 0
 func _ready():
-	pass 
+	pass
+#function for player losing moves
 func kill():
-	counter = 5
-	$Moves/Counter/Label.text = str(counter)
+	#reset moves
+	moves = 3
+	$Moves/Counter/Label.text = str(moves)
+	#show popup
 	get_node("Moves/Counter/Popup").popup()
+#function for game over
 func game_over():
-	get_node("Moves/Counter/Popup2").popup()
+	#show popup
+	get_node("Moves/Counter/HighScore").popup()
 onready var tile = get_node("TileMap")
+#function for getting title player clicked
 func get_tile(mouse_pos): 
 	var cell_pos = tile.world_to_map(mouse_pos) 
 	return cell_pos
-func _unhandled_input(event): 
+#function for player click
+func _unhandled_input(event):
 	if event is InputEventMouseButton and event.is_pressed():
 		var clicked = get_tile(event.position)
+		#lower moves if tile clicked
 		if tile.get_cell(clicked.x, clicked.y) == 0:
-			counter -= 1
-			$Moves/Counter/Label.text = str(counter)
-		if counter <= 0:
+			moves -= 1
+			$Moves/Counter/Label.text = str(moves)
+		#use kill() and game_over() functions
+		if moves == 0 and lives != 0:
 			kill()
 			lives -= 1
 			if lives <= 0:
 				game_over()
 			$Moves/Counter/Label2.text = str(lives)
+		#delete tile
 		tile.set_cell(clicked.x, clicked.y, -1)
-		
-
-
-
+#detect collision with player
 func _on_Area2D_body_entered(body):
 	if "Enemy" in body.name:
-		counter -= 1
-		$Moves/Counter/Label.text = str(counter)
-		if counter < 0:
+		moves -= 1
+		$Moves/Counter/Label.text = str(moves)
+		if moves < 0:
 			kill()
-
-
-func _on_Popup_about_to_show():
-	$TileMap.set_process_input(false)
-
-
-func _on_Popup_popup_hide():
-	$TileMap.set_process_input(true)
+	if "Pickup" in body.name:
+		score += 1
+		$Moves/Counter/Label3.text = str(score)
+		$Pickup.queue_free()
+#enter high score on game over
+func _on_Button2_pressed():
+	var name = $"Moves/Counter/HighScore/NameEntry".text
+	SilentWolf.Scores.persist_score(name, score)
+	SilentWolf.Scores.get_high_scores()
+	$"Moves/Counter/HighScore".hide()
+	$"Moves/Counter/Popup2".show()
+	

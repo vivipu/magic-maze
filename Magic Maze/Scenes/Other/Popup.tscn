@@ -5,6 +5,7 @@
 [ext_resource path="res://Scenes/Other/Button2.gd" type="Script" id=3]
 
 [node name="Popup" type="Popup"]
+visible = true
 margin_left = 331.095
 margin_top = 176.199
 margin_right = 697.095
@@ -30,25 +31,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 110.102
-margin_top = 134.347
-margin_right = 250.102
-margin_bottom = 186.347
-text = "Back to title"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Button2" type="Button" parent="."]
-margin_left = 110.102
-margin_top = 222.307
-margin_right = 250.102
-margin_bottom = 274.307
+margin_left = 113.469
+margin_top = 133.633
+margin_right = 253.469
+margin_bottom = 185.633
 text = "Retry"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 113.469
+margin_top = 214.042
+margin_right = 253.469
+margin_bottom = 266.042
+text = "Back to title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

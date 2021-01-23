@@ -33,6 +33,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Score" type="Label" parent="."]
+margin_left = -0.471931
+margin_top = 27.6862
+margin_right = 52.5281
+margin_bottom = 69.6862
+text = "Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Counter" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
@@ -72,6 +82,16 @@ margin_left = 40.0
 margin_top = 12.0
 margin_right = 60.0
 margin_bottom = 28.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Counter"]
+margin_left = 40.4719
+margin_top = 27.102
+margin_right = 60.4719
+margin_bottom = 43.102
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false

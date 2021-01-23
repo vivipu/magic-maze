@@ -16,13 +16,26 @@ _global_script_class_icons={
 [application]
 
 config/name="Magic Maze"
-run/main_scene="res://Scenes/Levels (Maps)/functionalitytest.tscn"
+run/main_scene="res://Scenes/Other/TitleScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "silent_wolf" )
+
+[gui]
+
+theme/custom="res://addons/dracula/theme.tres"
+theme/custom_font="res://addons/silent_wolf/Scores/assets/fonts/Comfortaa-Bold.ttf"
 
 [input]
 

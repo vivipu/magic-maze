@@ -8,7 +8,7 @@ extends Label
 var event = load("res://Scenes/Levels (Maps)/functionalitytest.gd").new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	event.counter = self.event.counter
-	self.set_text(str(event.counter))
+	event.moves = self.event.moves
+	self.set_text(str(event.moves))
 
 
