@@ -22,7 +22,7 @@ func _physics_process(delta):
 	if distance < 100:
 		var Player = get_parent().get_node("Player")
 		motion += (Vector2(Player.position) - position)
-		look_at(Player.position)
+		#look_at(Player.position)
 		motion = motion.normalized() * speed
 		move_and_collide(motion)
 	else:
