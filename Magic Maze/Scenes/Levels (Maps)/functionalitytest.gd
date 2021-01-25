@@ -10,13 +10,15 @@ func _ready():
 func kill():
 	#reset moves
 	moves = 3
-	$Moves/Counter/Label.text = str(moves)
+	$CanvasLayer/Moves/Counter/Label.text = str(moves)
 	#show popup
-	get_node("Moves/Counter/Popup").popup()
+	get_node("CanvasLayer/Moves/Counter/Popup").popup_centered()
 #function for game over
 func game_over():
 	#show popup
-	get_node("Moves/Counter/HighScore").popup()
+	moves = 0
+	$CanvasLayer/Moves/Counter/Label.text = str(moves)
+	get_node("CanvasLayer/Moves/Counter/HighScore").popup_centered()
 onready var tile = get_node("TileMap")
 #function for getting title player clicked
 func get_tile(mouse_pos): 
@@ -29,32 +31,33 @@ func _unhandled_input(event):
 		#lower moves if tile clicked
 		if tile.get_cell(clicked.x, clicked.y) == 0:
 			moves -= 1
-			$Moves/Counter/Label.text = str(moves)
+			$CanvasLayer/Moves/Counter/Label.text = str(moves)
 		#use kill() and game_over() functions
 		if moves == 0 and lives != 0:
 			kill()
 			lives -= 1
 			if lives <= 0:
 				game_over()
-			$Moves/Counter/Label2.text = str(lives)
+			$CanvasLayer/Moves/Counter/Label2.text = str(lives)
 		#delete tile
 		tile.set_cell(clicked.x, clicked.y, -1)
 #detect collision with player
 func _on_Area2D_body_entered(body):
 	if "Enemy" in body.name:
 		moves -= 1
-		$Moves/Counter/Label.text = str(moves)
+		$CanvasLayer/Moves/Counter/Label.text = str(moves)
 		if moves < 0:
 			kill()
 	if "Pickup" in body.name:
 		score += 1
-		$Moves/Counter/Label3.text = str(score)
+		$CanvasLayer/Moves/Counter/Label3.text = str(score)
 		$Pickup.queue_free()
 #enter high score on game over
 func _on_Button2_pressed():
-	var name = $"Moves/Counter/HighScore/NameEntry".text
+	var name = $"CanvasLayer/Moves/Counter/HighScore/NameEntry".text
 	SilentWolf.Scores.persist_score(name, score)
 	SilentWolf.Scores.get_high_scores()
-	$"Moves/Counter/HighScore".hide()
-	$"Moves/Counter/Popup2".show()
+	$"CanvasLayer/Moves/Counter/HighScore".hide()
+	$"CanvasLayer/Moves/Counter/Popup".hide()
+	$"CanvasLayer/Moves/Counter/Popup2".popup_centered()
 	
