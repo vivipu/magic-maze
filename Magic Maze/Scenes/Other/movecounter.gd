@@ -10,3 +10,7 @@ extends Control
 func _ready():
 	pass # Replace with function body.
 
+
+
+func _on_Popup_about_to_show():
+	get_tree().paused = true

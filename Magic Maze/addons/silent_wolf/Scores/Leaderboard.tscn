@@ -18,6 +18,7 @@ font_data = ExtResource( 3 )
 [sub_resource type="Theme" id=4]
 
 [node name="Leaderboard" type="Node2D"]
+pause_mode = 2
 position = Vector2( 39.1996, 37.4177 )
 scale = Vector2( 0.499884, 0.505414 )
 script = ExtResource( 1 )

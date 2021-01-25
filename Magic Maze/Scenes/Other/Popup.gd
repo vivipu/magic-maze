@@ -17,3 +17,4 @@ func _on_Button_pressed():
 
 func _on_Button2_pressed():
 	hide()
+	get_tree().paused = false

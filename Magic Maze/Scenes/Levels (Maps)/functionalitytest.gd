@@ -43,7 +43,7 @@ func _unhandled_input(event):
 		tile.set_cell(clicked.x, clicked.y, -1)
 #detect collision with player
 func _on_Area2D_body_entered(body):
-	if "Enemy" in body.name:
+	if "Enemy" in body.name or "Enemy2" in body.name:
 		moves -= 1
 		$CanvasLayer/Moves/Counter/Label.text = str(moves)
 		if moves < 0:
@@ -60,4 +60,4 @@ func _on_Button2_pressed():
 	$"CanvasLayer/Moves/Counter/HighScore".hide()
 	$"CanvasLayer/Moves/Counter/Popup".hide()
 	$"CanvasLayer/Moves/Counter/Popup2".popup_centered()
-	
+
