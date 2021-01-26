@@ -4,6 +4,7 @@ func _ready():
 	pass 
 	
 var movespeed = 200
+#player movement
 func _physics_process(delta):
 	var motion = Vector2()
 	if Input.is_action_pressed("up"):
@@ -17,7 +18,4 @@ func _physics_process(delta):
 	motion = motion.normalized()
 	motion = move_and_slide(motion * movespeed)
 onready var counter = 5
-func kill():
-	queue_free()
-	get_tree().reload_current_scene()
 

@@ -1,13 +1,6 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-#function for leaderboard
 onready var fadeInRect = $FadeIn
-
-#function for first level
 
 #button press functions
 func _on_Leaderboard_pressed():
