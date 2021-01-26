@@ -3,7 +3,7 @@
 [ext_resource path="res://addons/silent_wolf/assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.831373, 0.415686, 0.415686, 1 )
+bg_color = Color( 0.109804, 0.196078, 0.32549, 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32

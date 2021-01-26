@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.831373, 0.415686, 0.415686, 1 )
 
-[node name="ScoreItem" index="0" instance=ExtResource( 1 )]
+[node name="ScoreItem" instance=ExtResource( 1 )]
 rect_min_size = Vector2( 434, 64 )
 custom_styles/panel = SubResource( 1 )
 

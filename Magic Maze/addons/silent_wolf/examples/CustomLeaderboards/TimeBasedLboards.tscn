@@ -15,20 +15,9 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=3]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 size = 32
 font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-content_margin_left = 23.0
-content_margin_right = 23.0
-content_margin_top = 23.0
-content_margin_bottom = 23.0
-bg_color = Color( 0.831373, 0.415686, 0.415686, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id=5]
 content_margin_left = 23.0
@@ -46,13 +35,24 @@ content_margin_left = 23.0
 content_margin_right = 23.0
 content_margin_top = 23.0
 content_margin_bottom = 23.0
+bg_color = Color( 0.831373, 0.415686, 0.415686, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 23.0
+content_margin_right = 23.0
+content_margin_top = 23.0
+content_margin_bottom = 23.0
 bg_color = Color( 0.666667, 0.223529, 0.223529, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 64
 font_data = ExtResource( 2 )
 
@@ -121,7 +121,7 @@ margin_bottom = 50.0
 
 [node name="Monthly" type="VBoxContainer" parent="MainContainer/Boards"]
 margin_left = 692.0
-margin_right = 1224.0
+margin_right = 1225.0
 margin_bottom = 189.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -129,7 +129,7 @@ __meta__ = {
 }
 
 [node name="TitleContainer" type="CenterContainer" parent="MainContainer/Boards/Monthly"]
-margin_right = 532.0
+margin_right = 533.0
 margin_bottom = 85.0
 
 [node name="Label" type="Label" parent="MainContainer/Boards/Monthly/TitleContainer"]
@@ -153,7 +153,7 @@ margin_top = 50.0
 margin_bottom = 50.0
 
 [node name="main" type="VBoxContainer" parent="MainContainer/Boards"]
-margin_left = 1384.0
+margin_left = 1385.0
 margin_right = 1918.0
 margin_bottom = 189.0
 size_flags_horizontal = 3
@@ -162,21 +162,21 @@ __meta__ = {
 }
 
 [node name="TitleContainer" type="CenterContainer" parent="MainContainer/Boards/main"]
-margin_right = 534.0
+margin_right = 533.0
 margin_bottom = 85.0
 
 [node name="Label" type="Label" parent="MainContainer/Boards/main/TitleContainer"]
-margin_left = 121.0
-margin_right = 413.0
+margin_left = 120.0
+margin_right = 412.0
 margin_bottom = 85.0
 custom_fonts/font = SubResource( 2 )
 text = "All time"
 align = 1
 
 [node name="HighScores" type="CenterContainer" parent="MainContainer/Boards/main"]
-margin_left = 267.0
+margin_left = 266.0
 margin_top = 89.0
-margin_right = 267.0
+margin_right = 266.0
 margin_bottom = 189.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 4
@@ -197,7 +197,7 @@ margin_bottom = 265.0
 margin_left = 789.0
 margin_right = 1075.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
 text = "Loading scores..."
 valign = 1
 
@@ -220,9 +220,9 @@ __meta__ = {
 [node name="CloseButton" parent="MainContainer/CenterContainer/CloseButtonContainer" instance=ExtResource( 4 )]
 margin_right = 699.0
 margin_bottom = 118.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Close Leaderboard"
 [connection signal="pressed" from="MainContainer/CenterContainer/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
