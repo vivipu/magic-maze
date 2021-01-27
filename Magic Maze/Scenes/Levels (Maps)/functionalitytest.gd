@@ -17,7 +17,7 @@ func kill():
 func game_over():
 	#show popup
 	moves = 0
-	$CanvasLayer/Moves/Counter/Label.text = str(moves)
+	$CanvasLayer/Control/Counter/Label.text = str(moves)
 	get_node("CanvasLayer/Control/Counter/HighScore").popup_centered()
 onready var tile = get_node("TileMap")
 #function for getting title player clicked
@@ -25,15 +25,15 @@ func get_tile(mouse_pos):
 	var cell_pos = tile.world_to_map(mouse_pos) 
 	return cell_pos
 #function for player click
-func _unhandled_input(event):
-	if event is InputEventMouseButton and event.is_pressed():
+func _input(event):
+	if event is InputEventMouseButton: # and event.is_pressed():
 		var clicked = get_tile(event.position)
 		#lower moves if tile clicked
 		if tile.get_cell(clicked.x, clicked.y) == 0:
 			moves -= 1
 			$CanvasLayer/Control/Counter/Label.text = str(moves)
 		#use kill() and game_over() functions
-		if moves == 0 and lives != 0:
+		if moves <= 0 and lives != 0:
 			kill()
 			lives -= 1
 			if lives <= 0:

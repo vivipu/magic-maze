@@ -101,3 +101,7 @@ func _on_CloseButton_pressed():
 	SWLogger.info("Closing SilentWolf leaderboard, switching to scene: " + str(scene_name))
 	#global.reset()
 	get_tree().change_scene(scene_name)
+
+
+func _on_Reset_pressed():
+	SilentWolf.Scores.wipe_leaderboard()

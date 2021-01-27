@@ -6,9 +6,8 @@ extends KinematicBody2D
 # var b = "text"
 onready var path_follow
 var timer = 0
-var x = 0
-var direction = "LEFT"
 func _ready():
+	#timer for random enemy movement
 	var _timer = Timer.new()
 	add_child(_timer)
 	_timer.connect("timeout", self, "_on_Timer_timeout")
@@ -18,6 +17,7 @@ func _ready():
 func _physics_process(delta):
 	var speed = 1.5
 	var motion = Vector2()
+	#if player close enough to enemy, chase player
 	var distance = get_parent().get_node("Player").position.distance_to(get_parent().get_node("Enemy").position)
 	if distance < 100:
 		var Player = get_parent().get_node("Player")
@@ -25,13 +25,11 @@ func _physics_process(delta):
 		#look_at(Player.position)
 		motion = motion.normalized() * speed
 		move_and_collide(motion)
-	else:
-		pass
-
 func _on_Timer_timeout():
 	var motion = Vector2()
 	var speed = 13
 	var random_number = randi()% 4
+	#if player not close enough to enemy, move randomly
 	var distance = get_parent().get_node("Player").position.distance_to(get_parent().get_node("Enemy").position)
 	if distance > 100:
 		match random_number:
