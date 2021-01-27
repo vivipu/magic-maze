@@ -30,6 +30,7 @@ func _input(event):
 		var clicked = get_tile(event.position)
 		#lower moves if tile clicked
 		if tile.get_cell(clicked.x, clicked.y) == 0:
+			tile.set_cell(clicked.x, clicked.y, -1)
 			moves -= 1
 			$CanvasLayer/Control/Counter/Label.text = str(moves)
 		#use kill() and game_over() functions
@@ -40,10 +41,10 @@ func _input(event):
 				game_over()
 			$CanvasLayer/Control/Counter/Label2.text = str(lives)
 		#delete tile
-		tile.set_cell(clicked.x, clicked.y, -1)
+		#tile.set_cell(clicked.x, clicked.y, -1)
 #detect collision with player
 func _on_Area2D_body_entered(body):
-	if "Enemy" in body.name or "Enemy2" in body.name:
+	if "Enemy" in body.name:
 		moves -= 1
 		$CanvasLayer/Control/Counter/Label.text = str(moves)
 		if moves < 0:
