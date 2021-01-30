@@ -53,6 +53,7 @@ func _on_Area2D_body_entered(body):
 		score += 1
 		$CanvasLayer/Control/Counter/Label3.text = str(score)
 		$Pickup.queue_free()
+	
 #enter high score on game over
 func _on_Button2_pressed():
 	var name = $"CanvasLayer/Control/Counter/HighScore/NameEntry".text
