@@ -39,3 +39,7 @@ func _on_Timer_timeout():
 			3: motion.y -= 1
 		motion = motion.normalized() * speed
 		move_and_collide(motion)
+
+
+
+

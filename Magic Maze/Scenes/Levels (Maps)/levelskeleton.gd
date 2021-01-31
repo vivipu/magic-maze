@@ -59,7 +59,7 @@ func _on_Area2D_body_entered(body):
 		body.queue_free()
 	if "Goal" in body.name:
 		score += moves
-		$CanvasLayer/Control/GoalPopup.popup()
+		$CanvasLayer/Control/GoalPopup.popup_centered()
 #enter high score on game over
 func _on_Button2_pressed():
 	var name = $"CanvasLayer/Control/Counter/HighScore/NameEntry".text
