@@ -47,12 +47,16 @@ func _on_Area2D_body_entered(body):
 	if "Enemy" in body.name:
 		moves -= 1
 		$CanvasLayer/Control/Counter/Label.text = str(moves)
-		if moves < 0:
+		if moves <= 0 and lives != 0:
 			kill()
+			lives -= 1
+			if lives <= 0:
+				game_over()
+			$CanvasLayer/Control/Counter/Label2.text = str(lives)
 	if "Pickup" in body.name:
 		score += 1
 		$CanvasLayer/Control/Counter/Label3.text = str(score)
-		$Pickup.queue_free()
+		body.queue_free()
 	if "Goal" in body.name:
 		score += moves
 		$CanvasLayer/Control/GoalPopup.popup()
