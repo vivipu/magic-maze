@@ -15,31 +15,33 @@ func _ready():
 	_timer.set_one_shot(false) # Make sure it loops
 	_timer.start()
 func _physics_process(delta):
-	var speed = 1.5
-	var motion = Vector2()
-	#if player close enough to enemy, chase player
-	var distance = get_parent().get_node("Player").position.distance_to(get_parent().get_node("Enemy").position)
-	if distance < 100:
-		var Player = get_parent().get_node("Player")
-		motion += (Vector2(Player.position) - position)
-		#look_at(Player.position)
-		motion = motion.normalized() * speed
-		move_and_collide(motion)
+	#var speed = 1.5
+	#var motion = Vector2()
+	#if player close enough to enemy, chase player poop!!!!
+	#var distance = get_parent().get_node("Player").position.distance_to(get_position())
+	#if distance < 100:
+	#	var Player = get_parent().get_node("Player")
+	#	motion += (Vector2(Player.position) - position)
+	#	#look_at(Player.position)
+	#	motion = motion.normalized() * speed
+	#	move_and_collide(motion)
+	pass
 func _on_Timer_timeout():
 	var motion = Vector2()
 	var speed = 13
 	var random_number = randi()% 4
 	#if player not close enough to enemy, move randomly
-	var distance = get_parent().get_node("Player").position.distance_to(get_parent().get_node("Enemy").position)
-	if distance > 100:
-		match random_number:
-			0: motion.x += 1
-			1: motion.x -= 1
-			2: motion.y += 1
-			3: motion.y -= 1
-		motion = motion.normalized() * speed
-		move_and_collide(motion)
-
+	#var distance = get_parent().get_node("Player").position.distance_to(get_position())
+	#if distance > 100:
+	#	match random_number:
+	#		0: motion.x += 1
+	#		1: motion.x -= 1
+	#		2: motion.y += 1
+	#		3: motion.y -= 1
+	#	motion = motion.normalized() * speed
+	#	move_and_collide(motion)
+func MovementLoop(delta):
+	pass
 
 
 

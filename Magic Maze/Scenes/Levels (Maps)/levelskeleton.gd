@@ -45,14 +45,12 @@ func _input(event):
 #detect collision with player
 func _on_Area2D_body_entered(body):
 	if "Enemy" in body.name:
-		moves -= 1
-		$CanvasLayer/Control/Counter/Label.text = str(moves)
-		if moves <= 0 and lives != 0:
-			kill()
-			lives -= 1
-			if lives <= 0:
-				game_over()
-			$CanvasLayer/Control/Counter/Label2.text = str(lives)
+		lives -= 1
+		kill()
+		$CanvasLayer/Control/Counter/Label2.text = str(lives)
+		if lives <= 0:
+			game_over()
+		$CanvasLayer/Control/Counter/Label2.text = str(lives)
 	if "Pickup" in body.name:
 		score += 1
 		$CanvasLayer/Control/Counter/Label3.text = str(score)
