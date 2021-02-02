@@ -7,7 +7,7 @@ extends Label
 
 
 # Called when the node enters the scene tree for the first time.
-var event = load("res://Scenes/Levels (Maps)/functionalitytest.gd").new()
+var event = load("res://global.gd").new()
 # Called when the node enters the scene tree for the first time.
 #set text
 func _ready():
