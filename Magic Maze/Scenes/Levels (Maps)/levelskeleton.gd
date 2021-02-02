@@ -1,12 +1,27 @@
 extends Node2D
-const tilemap = preload("res://Scenes/Levels (Maps)/functestmap.tscn")
 const pickup = preload("res://Scenes/Other/Pickup.tscn")
 onready var vars = get_node("/root/Global")
+var loaded = load("res://global.gd")
+var instanced = loaded.new()
 #function for player losing moves
 func _ready():
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
 	$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
+	#section to decide whether to remove any pickups; might change this for 
+	#find how many pickups there are
+	#var pickup_size = get_tree().get_nodes_in_group("pickup").size()
+	#create an array of pickups
+	#var pickups = get_tree().get_nodes_in_group("pickup")
+	#create counter	
+	#var counter = vars.score
+	#if difference between current and original score
+	#if (vars.score - instanced.score) <= pickup_size and vars.score != 0:
+	#	for x in pickups:
+	#		pickup_size -= 1
+	#		x.queue_free()
+	#		if pickup_size == 0:
+	#			break
 func kill():
 	#reset moves
 	vars.moves = 3
