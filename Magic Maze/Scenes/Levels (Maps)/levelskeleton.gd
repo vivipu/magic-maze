@@ -45,9 +45,11 @@ func get_tile(mouse_pos):
 func _input(event):
 	if event is InputEventMouseButton: # and event.is_pressed():
 		var clicked = get_tile(event.position)
-		#lower moves if tile clicked
+		#detect if tile is there
 		if tile.get_cell(clicked.x, clicked.y) == 0:
+			#delete tile
 			tile.set_cell(clicked.x, clicked.y, -1)
+			#remove a move if tile is clicked
 			vars.moves -= 1
 			$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 		#use kill() and game_over() functions
@@ -58,8 +60,9 @@ func _input(event):
 			if vars.lives <= 0:
 				game_over()
 			$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
-		#delete tile
-		#tile.set_cell(clicked.x, clicked.y, -1)
+	if event is InputEventKey:
+		if event.scancode == KEY_ESCAPE:
+			get_tree().quit()
 #detect collision with player
 func _on_Area2D_body_entered(body):
 	if "Enemy" in body.name:

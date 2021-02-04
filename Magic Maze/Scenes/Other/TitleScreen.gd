@@ -11,4 +11,5 @@ func _on_Start_pressed():
 	get_tree().change_scene("res://Scenes/Levels (Maps)/levelskeleton.tscn")
 func _on_Fullscreen_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
-
+func _on_Quit_pressed():
+	get_tree().quit()
