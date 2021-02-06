@@ -6,6 +6,7 @@
 extents = Vector2( 9, 9 )
 
 [node name="Goal" type="KinematicBody2D"]
+position = Vector2( 7.85723, 7.99754 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.494118, 0.890196, 0.423529, 1 )
