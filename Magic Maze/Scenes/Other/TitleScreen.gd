@@ -5,6 +5,8 @@ onready var vars = get_node("/root/Global")
 #set score to 0
 func _ready():
 	vars.score = 0
+	vars.lives = 3
+	vars.moves = 3
 #esc = quit game
 func _input(event):
 	if event is InputEventKey:
