@@ -34,8 +34,6 @@ func game_over():
 	vars.moves = 0
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	get_node("CanvasLayer/Control/Counter/HighScore").popup_centered()
-func restart():
-	$CanvasLayer/Control/Restart.popup()
 onready var tile = get_node("TileMap")
 #function for getting title player clicked
 func get_tile(mouse_pos):
@@ -55,7 +53,6 @@ func _input(event):
 		#use kill() and game_over() functions
 		if vars.moves <= 0 and vars.lives != 0:
 			kill()
-			restart()
 			vars.lives -= 1
 			if vars.lives <= 0:
 				game_over()
