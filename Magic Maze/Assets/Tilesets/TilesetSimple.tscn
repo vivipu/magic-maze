@@ -19,5 +19,7 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 shape = SubResource( 1 )
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+light_mask = 3
 occluder = SubResource( 2 )
+light_mask = 3
