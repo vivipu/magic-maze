@@ -17,8 +17,8 @@ func _ready():
 
 
 func _on_Singleplayer_pressed():
-	get_tree().change_scene("res://Scenes/Levels (Maps)/levelskeleton.tscn")
+	get_tree().change_scene("res://Scenes/Levels (Maps)/level1.tscn")
 
 
 func _on_Multiplayer_pressed():
-	get_tree().change_scene("res://Scenes/Levels (Maps)/levelskeletonmultiplayer.tscn")
+	get_tree().change_scene("res://Scenes/Levels (Maps)/level1multi.tscn")

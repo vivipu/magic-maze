@@ -5,6 +5,7 @@ var loaded = load("res://global.gd")
 var instanced = loaded.new()
 #function for player losing moves
 func _ready():
+	vars.moves = 3
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
 	$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
@@ -23,8 +24,7 @@ func _ready():
 	#		if pickup_size == 0:
 	#			break
 func kill():
-	#reset moves
-	vars.moves = 3
+	vars.moves = 0
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	#show popup
 	get_node("CanvasLayer/Control/Counter/Popup").popup_centered()
@@ -51,7 +51,7 @@ func _input(event):
 			vars.moves -= 1
 			$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 		#use kill() and game_over() functions
-		if vars.moves <= 0 and vars.lives != 0:
+		if vars.moves < 0 and vars.lives != 0:
 			kill()
 			vars.lives -= 1
 			if vars.lives <= 0:
