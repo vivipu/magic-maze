@@ -71,6 +71,8 @@ func _on_Area2D_body_entered(body):
 		$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
 	if "Pickup" in body.name:
 		vars.score += 1
+		vars.moves += 1
+		$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 		$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
 		body.queue_free()
 	if "Goal" in body.name:
