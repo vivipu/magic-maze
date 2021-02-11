@@ -5,6 +5,8 @@ var loaded = load("res://global.gd")
 var instanced = loaded.new()
 #function for player losing moves
 func _ready():
+	if get_node("/root/MusicTitle"):
+		get_node("/root/MusicTitle").stop()
 	vars.moves = 2
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
@@ -46,6 +48,7 @@ func _input(event):
 		#detect if tile is there
 		if tile.get_cell(clicked.x, clicked.y) == 0:
 			#delete tile
+			$BreakSound.play()
 			tile.set_cell(clicked.x, clicked.y, -1)
 			#remove a move if tile is clicked
 			vars.moves -= 1
@@ -74,6 +77,7 @@ func _on_Area2D_body_entered(body):
 		vars.moves += 1
 		$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 		$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
+		$PickupSound.play()
 		body.queue_free()
 	if "Goal" in body.name:
 		vars.score += vars.moves

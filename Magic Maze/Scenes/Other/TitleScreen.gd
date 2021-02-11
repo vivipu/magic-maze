@@ -4,6 +4,7 @@ onready var fadeInRect = $FadeIn
 onready var vars = get_node("/root/Global")
 #set score to 0
 func _ready():
+	get_node("/root/MusicTitle").play()
 	vars.score = 0
 	vars.lives = 3
 	vars.moves = 3

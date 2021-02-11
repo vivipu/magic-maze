@@ -6,7 +6,8 @@ var instanced = loaded.new()
 #function for player losing moves
 func _ready():
 	vars.moves = 3
-	get_node("/root/MusicTitle").queue_free()
+	if get_node("/root/MusicTitle"):
+		get_node("/root/MusicTitle").stop()
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
 	$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
@@ -49,6 +50,7 @@ func _input(event):
 			#delete tile
 			tile.set_cell(clicked.x, clicked.y, -1)
 			#remove a move if tile is clicked
+			$BreakSound.play()
 			vars.moves -= 1
 			$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 		#use kill() and game_over() functions
@@ -75,6 +77,7 @@ func _on_Area2D_body_entered(body):
 		vars.moves += 1
 		$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 		$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
+		$PickupSound.play()
 		body.queue_free()
 	if "Goal" in body.name:
 		vars.score += vars.moves
