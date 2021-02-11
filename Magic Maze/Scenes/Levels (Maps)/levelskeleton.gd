@@ -4,10 +4,13 @@ onready var vars = get_node("/root/Global")
 var loaded = load("res://global.gd")
 var instanced = loaded.new()
 #function for player losing moves
-func _ready():
-	vars.moves = 3
-	if get_node("/root/MusicTitle"):
+func check_mus_title():
+	if get_node("/root/MusicTitle").playing:
 		get_node("/root/MusicTitle").stop()
+func _ready():
+	for x in range(2):
+		check_mus_title()
+	vars.moves = 3
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
 	$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
