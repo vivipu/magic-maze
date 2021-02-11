@@ -6,6 +6,7 @@ var instanced = loaded.new()
 #function for player losing moves
 func _ready():
 	vars.moves = 3
+	get_node("/root/MusicTitle").queue_free()
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
 	$CanvasLayer/Control/Counter/Label3.text = str(vars.score)

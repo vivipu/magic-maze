@@ -5,6 +5,7 @@ var loaded = load("res://global.gd")
 var instanced = loaded.new()
 #function for player losing moves
 func _ready():
+	get_node("/root/MusicTitle").queue_free()
 	vars.moves = 1
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
