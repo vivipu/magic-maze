@@ -8,9 +8,9 @@ onready var MusTitle = get_node("/root/MusicTitle")
 func check_mus_title():
 	if get_node("/root/MusicTitle").playing:
 		get_node("/root/MusicTitle").stop()
+		get_node("/root/MusicTitle").seek(-1)
 func _ready():
-	for x in range(2):
-		check_mus_title()
+	check_mus_title()
 	vars.moves = 1
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)

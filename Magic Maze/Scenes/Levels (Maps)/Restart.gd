@@ -17,8 +17,6 @@ func _ready():
 
 onready var vars = get_node("/root/Global")
 func _on_Button_pressed():
-	vars.moves = 3
-	vars.lives = 3
-	vars.score = 0
+	vars.lives -= 1
 	get_tree().reload_current_scene()
 	get_tree().paused = false
