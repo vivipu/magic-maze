@@ -10,5 +10,5 @@ extends PathFollow2D
 func _ready():
 	pass # Replace with function body.
 func _process(delta):
-	var speed = 300
+	var speed = 200
 	set_offset(get_offset() + speed * delta)
