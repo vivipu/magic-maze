@@ -14,3 +14,5 @@ func _on_Popup_about_to_show():
 	get_tree().paused = true
 func _on_Pause_about_to_show():
 	get_tree().paused = true
+func _on_GoalPopup_about_to_show():
+	get_tree().paused = true

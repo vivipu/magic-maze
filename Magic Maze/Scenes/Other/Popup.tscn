@@ -5,7 +5,6 @@
 [ext_resource path="res://Scenes/Other/Button2.gd" type="Script" id=3]
 
 [node name="Popup" type="Popup"]
-visible = true
 margin_left = 331.095
 margin_top = 176.199
 margin_right = 697.095
