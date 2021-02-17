@@ -30,7 +30,6 @@ func _ready():
 	#		if pickup_size == 0:
 	#			break
 func kill():
-	
 	vars.moves = 0
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	#show popup
