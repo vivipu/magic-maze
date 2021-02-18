@@ -25,3 +25,7 @@ func _physics_process(delta):
 	motion = move_and_slide(motion * movespeed)
 onready var counter = 5
 
+
+
+func _on_Area2D_body_entered(body):
+	pass # Replace with function body.
