@@ -20,6 +20,4 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
-light_mask = 3
 occluder = SubResource( 2 )
-light_mask = 3
