@@ -9,4 +9,4 @@ func _input(event):
 			get_tree().quit()
 #button press function
 func _on_Instructions_pressed():
-	get_tree().change_scene("res://Scenes/Other/Instructions.tscn")
+	get_tree().change_scene("res://Scenes/Other/Story.tscn")

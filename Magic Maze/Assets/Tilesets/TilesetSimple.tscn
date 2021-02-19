@@ -17,7 +17,9 @@ texture = ExtResource( 1 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+scale = Vector2( 0.736729, 0.715277 )
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+visible = false
 occluder = SubResource( 2 )

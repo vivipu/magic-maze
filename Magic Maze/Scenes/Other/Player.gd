@@ -15,9 +15,11 @@ func _physics_process(delta):
 		$Sprite.play("Bear")
 	if Input.is_action_pressed("right"):
 		motion.x += 0.75
+		$Sprite.set_flip_h(false)
 		$Sprite.play("Bear")
 	if Input.is_action_pressed("left"):
 		motion.x -= 0.75
+		$Sprite.set_flip_h(true)
 		$Sprite.play("Bear")
 	if Input.is_action_just_released("down") or Input.is_action_just_released("left") or Input.is_action_just_released("right") or Input.is_action_just_released("up"):
 		$Sprite.stop()
