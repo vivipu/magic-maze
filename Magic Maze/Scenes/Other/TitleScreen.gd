@@ -23,5 +23,9 @@ func _on_Fullscreen_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 func _on_Quit_pressed():
 	get_tree().quit()
-func _on_About_pressed():
+func _on_Instructions_pressed():
 	get_tree().change_scene("res://Scenes/Other/Instructions.tscn")
+
+
+func _on_Credits_pressed():
+	get_tree().change_scene("res://Scenes/Other/Credits.tscn")
