@@ -1,6 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Artwork/light.png" type="Texture" id=1]
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Yellow_Fish.png-6f39023f99d50e1d3939b61b4bf306b3.stex"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 9 )
@@ -9,9 +11,9 @@ extents = Vector2( 9, 9 )
 position = Vector2( 7.99754, 7.99754 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.945098, 0.65098, 0.235294, 1 )
-texture = ExtResource( 1 )
+scale = Vector2( 0.109947, 0.109947 )
+texture = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 1.15753, 1.08699 )
+scale = Vector2( 1.96406, 1.33024 )
 shape = SubResource( 1 )

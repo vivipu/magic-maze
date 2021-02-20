@@ -30,12 +30,12 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.0485127, -0.140147 )
-scale = Vector2( 0.728709, 0.686597 )
+scale = Vector2( 0.881957, 0.830989 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1.58946e-07, 0 )
-scale = Vector2( 0.202808, 0.202808 )
+scale = Vector2( 0.221295, 0.221295 )
 frames = SubResource( 2 )
 animation = "Bear"
 
@@ -45,6 +45,7 @@ scale = Vector2( 0.764466, 0.73183 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1.46796, 0 )
+scale = Vector2( 1.06207, 1.06207 )
 shape = SubResource( 3 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
