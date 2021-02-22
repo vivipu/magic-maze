@@ -105,3 +105,9 @@ func _on_CloseButton_pressed():
 
 func _on_Reset_pressed():
 	SilentWolf.Scores.wipe_leaderboard()
+	
+#esc = quit game
+func _input(event):
+	if event is InputEventKey:
+		if event.scancode == KEY_ESCAPE:
+			get_tree().quit()	
