@@ -12,3 +12,4 @@ func _ready():
 var lives = 3
 var moves = 3
 var score = 0
+var viewed_instructions = false

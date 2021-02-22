@@ -1,7 +1,8 @@
 extends Control
 
+onready var vars = get_node("/root/Global")
 func _ready():
-	pass # Replace with function body.
+	vars.viewed_instructions = true
 #esc = quit
 func _input(event):
 	if event is InputEventKey:
