@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/Yellow_Fish.png-6f39023f99d50e1d3939b61b4bf306b3.stex"
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9, 9 )
 
 [node name="Pickup" type="KinematicBody2D"]
@@ -12,8 +12,8 @@ position = Vector2( 7.99754, 7.99754 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.109947, 0.109947 )
-texture = SubResource( 2 )
+texture = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 1.96406, 1.33024 )
-shape = SubResource( 1 )
+scale = Vector2( 2.31291, 1.56651 )
+shape = SubResource( 2 )
