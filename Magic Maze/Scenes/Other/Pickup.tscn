@@ -8,6 +8,7 @@ load_path = "res://.import/Yellow_Fish.png-6f39023f99d50e1d3939b61b4bf306b3.stex
 extents = Vector2( 9, 9 )
 
 [node name="Pickup" type="KinematicBody2D"]
+show_behind_parent = true
 position = Vector2( 7.99754, 7.99754 )
 
 [node name="Sprite" type="Sprite" parent="."]
