@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="Magic Maze"
 run/main_scene="res://Scenes/Other/TitleScreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Artwork/Game_Icon.png"
+config/windows_native_icon="res://Assets/Artwork/Game_Icon.ico"
 
 [autoload]
 
