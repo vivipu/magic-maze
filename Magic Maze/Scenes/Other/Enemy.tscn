@@ -22,7 +22,7 @@ animations = [ {
 position = Vector2( 8.83939, 8.69908 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 1.15001, 1.45202 )
+scale = Vector2( 0.825842, 1.04272 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -30,12 +30,12 @@ scale = Vector2( 1.86845, 0.852894 )
 collision_layer = 2147483650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2( 1.30757, 1.42687 )
+scale = Vector2( 0.922339, 1.00649 )
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 3 )
 animation = "Bat"
-frame = 2
+frame = 3
 playing = true
