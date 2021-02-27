@@ -60,8 +60,10 @@ font_data = ExtResource( 2 )
 script = ExtResource( 5 )
 
 [node name="MainContainer" type="VBoxContainer" parent="."]
-margin_right = 1918.0
+margin_left = 51.8877
+margin_right = 1969.89
 margin_bottom = 1078.0
+rect_scale = Vector2( 0.482468, 0.482468 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

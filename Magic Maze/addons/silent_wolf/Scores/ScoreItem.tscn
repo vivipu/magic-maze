@@ -1,23 +1,23 @@
 [gd_scene load_steps=6 format=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.109804, 0.196078, 0.32549, 1 )
+bg_color = Color( 0.156863, 0.215686, 0.266667, 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Assets/Fonts/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 38
+font_data = SubResource( 2 )
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://Assets/Fonts/Roboto-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=2]
-size = 38
-font_data = SubResource( 4 )
-
-[sub_resource type="DynamicFontData" id=5]
-font_path = "res://Assets/Fonts/Roboto-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 40
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 5 )
+font_data = SubResource( 4 )
 
 [node name="ScoreItem" type="Panel"]
 margin_right = 782.0
@@ -35,7 +35,7 @@ margin_left = 19.6216
 margin_top = 15.6216
 margin_right = 586.622
 margin_bottom = 70.6216
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "1. Godzilla"
 
 [node name="Score" type="Label" parent="."]
@@ -43,7 +43,7 @@ margin_left = 671.0
 margin_top = 17.0
 margin_right = 756.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "13"
 align = 2
 valign = 1

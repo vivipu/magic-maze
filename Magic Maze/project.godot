@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Global="*res://global.gd"
 MusicTitle="*res://Scenes/Other/Music-Title.tscn"
+SceneChanger="*res://Scenes/Other/SceneChanger.tscn"
 
 [display]
 
