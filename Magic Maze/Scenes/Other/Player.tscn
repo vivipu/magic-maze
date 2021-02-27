@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Artwork/WizardBear/WizardBearLeftRight4.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Other/Player.gd" type="Script" id=2]
@@ -24,13 +24,16 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 9, 9 )
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9, 9 )
+
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.0485127, -0.140147 )
-scale = Vector2( 0.881957, 0.830989 )
+scale = Vector2( 0.754175, 0.710592 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
@@ -41,11 +44,22 @@ animation = "Bear"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1.10686, -0.117851 )
-scale = Vector2( 0.764466, 0.73183 )
+scale = Vector2( 0.618895, 0.592474 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1.46796, 0 )
 scale = Vector2( 1.06207, 1.06207 )
 shape = SubResource( 3 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 1.10686, -0.117851 )
+scale = Vector2( 1.60332, 2.47153 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -1.46796, 0 )
+scale = Vector2( 1.06207, 1.06207 )
+shape = SubResource( 4 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D_body_entered"]

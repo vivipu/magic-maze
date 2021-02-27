@@ -68,7 +68,19 @@ func _input(event):
 		if event.scancode == KEY_ESCAPE:
 			get_tree().quit()
 #detect collision with player
-func _on_Area2D_body_entered(body):
+
+#enter high score on game over
+func _on_Button2_pressed():
+	var name = $"CanvasLayer/Control/Counter/HighScore/NameEntry".text
+	SilentWolf.Scores.persist_score(name, vars.score)
+	SilentWolf.Scores.get_high_scores()
+	$"CanvasLayer/Control/Counter/HighScore".hide()
+	$"CanvasLayer/Control/Counter/Popup".hide()
+	$"CanvasLayer/Control/Counter/Popup2".popup_centered()
+#pause button
+func _on_PauseButton_pressed():
+	get_node("CanvasLayer/Control/Pause").popup_centered()
+func _on_Area2D2_body_entered(body):
 	if "Enemy" in body.name:
 		vars.lives -= 1
 		kill()
@@ -87,14 +99,3 @@ func _on_Area2D_body_entered(body):
 		vars.score += vars.moves
 		$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
 		$CanvasLayer/Control/GoalPopup.popup_centered()
-#enter high score on game over
-func _on_Button2_pressed():
-	var name = $"CanvasLayer/Control/Counter/HighScore/NameEntry".text
-	SilentWolf.Scores.persist_score(name, vars.score)
-	SilentWolf.Scores.get_high_scores()
-	$"CanvasLayer/Control/Counter/HighScore".hide()
-	$"CanvasLayer/Control/Counter/Popup".hide()
-	$"CanvasLayer/Control/Counter/Popup2".popup_centered()
-#pause button
-func _on_PauseButton_pressed():
-	get_node("CanvasLayer/Control/Pause").popup_centered()
