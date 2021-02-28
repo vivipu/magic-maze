@@ -17,6 +17,10 @@ _global_script_class_icons={
 
 config/name="Magic Maze"
 run/main_scene="res://Scenes/Other/TitleScreen.tscn"
+boot_splash/image="res://Assets/Artwork/splash.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.0509804, 0.0941176, 0.129412, 1 )
 config/icon="res://Assets/Artwork/Game_Icon.png"
 config/windows_native_icon="res://Assets/Artwork/Game_Icon.ico"
 
