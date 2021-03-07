@@ -46,7 +46,7 @@ func get_tile(mouse_pos):
 	return cell_pos
 #function for player click
 func _input(event):
-	if event is InputEventMouseButton: # and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed():
 		var clicked = get_tile(event.position)
 		#detect if tile is there
 		if tile.get_cell(clicked.x, clicked.y) == 0:
@@ -77,8 +77,6 @@ func _on_Button2_pressed():
 #pause button
 func _on_PauseButton_pressed():
 	get_node("CanvasLayer/Control/Pause").popup_centered()
-
-
 func _on_Area2D2_body_entered(body):
 	if "Enemy" in body.name:
 		vars.lives -= 1
@@ -95,6 +93,8 @@ func _on_Area2D2_body_entered(body):
 		$PickupSound.play()
 		body.queue_free()
 	if "Goal" in body.name:
+		$BackgroundMusic.stop()
+		$GoalSound.play()
 		vars.score += vars.moves
 		$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
 		$CanvasLayer/Control/GoalPopup.popup_centered()
