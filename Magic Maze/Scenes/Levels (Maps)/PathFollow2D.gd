@@ -13,3 +13,5 @@ func _process(delta):
 	if not status.level_over:
 		var speed = 200
 		set_offset(get_offset() + speed * delta)
+	if status.level_over:
+		$Enemy/AnimatedSprite.stop()

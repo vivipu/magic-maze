@@ -6,7 +6,7 @@ func _ready():
 	$AnimatedSprite.stop()
 var movespeed = 200
 func _physics_process(delta):
-	#move player and play animation when 2nd player moves
+	#move enemy player and play animation when 2nd player moves
 	if not status.level_over:
 		var motion = Vector2()
 		if Input.is_action_pressed("up2"):

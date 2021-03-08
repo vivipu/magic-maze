@@ -77,6 +77,7 @@ func _on_Button2_pressed():
 #pause button
 func _on_PauseButton_pressed():
 	get_node("CanvasLayer/Control/Pause").popup_centered()
+#decide what to do when things touch player
 func _on_Area2D2_body_entered(body):
 	if "Enemy" in body.name:
 		vars.lives -= 1

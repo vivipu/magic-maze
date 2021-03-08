@@ -10,14 +10,18 @@ func _input(event):
 			get_tree().quit()
 func _ready():
 	pass # Replace with function body.
+#when player selects singleplayer
 func _on_Singleplayer_pressed():
 	single = true
+	#show instructions if not already seen
 	if vars.viewed_instructions == false:
 		get_node("InstructionPopup").popup_centered()
 	else:
 		get_tree().change_scene("res://Scenes/Levels (Maps)/level1.tscn")
+#when player selects multiplayer
 func _on_Multiplayer_pressed():
 	multi = true
+	#show instructions if not already seen
 	if vars.viewed_instructions == false:
 		get_node("InstructionPopup").popup_centered()
 	else:

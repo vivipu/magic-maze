@@ -12,23 +12,10 @@ func check_mus_title():
 func _ready():
 	check_mus_title()
 	vars.moves = 1
+	#set text in GUI
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
 	$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
-	#section to decide whether to remove any pickups; might change this for 
-	#find how many pickups there are
-	#var pickup_size = get_tree().get_nodes_in_group("pickup").size()
-	#create an array of pickups
-	#var pickups = get_tree().get_nodes_in_group("pickup")
-	#create counter	
-	#var counter = vars.score
-	#if difference between current and original score
-	#if (vars.score - instanced.score) <= pickup_size and vars.score != 0:
-	#	for x in pickups:
-	#		pickup_size -= 1
-	#		x.queue_free()
-	#		if pickup_size == 0:
-	#			break
 func kill():
 	vars.moves = 0
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
@@ -80,6 +67,7 @@ func _on_Button2_pressed():
 #pause button
 func _on_PauseButton_pressed():
 	get_node("CanvasLayer/Control/Pause").popup_centered()
+#decide what to do when things touch player
 func _on_Area2D2_body_entered(body):
 	if "Enemy" in body.name:
 		vars.lives -= 1
@@ -101,3 +89,9 @@ func _on_Area2D2_body_entered(body):
 		vars.score += vars.moves
 		$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
 		$CanvasLayer/Control/GoalPopup.popup_centered()
+#for level 5 only: save high score on last level
+func _on_Button_pressed():
+	var name = $"CanvasLayer/Control/GoalPopup/NameEntry".text
+	SilentWolf.Scores.persist_score(name, vars.score)
+	SilentWolf.Scores.get_high_scores()
+	get_tree().change_scene("res://Scenes/Other/TitleScreen.tscn")
