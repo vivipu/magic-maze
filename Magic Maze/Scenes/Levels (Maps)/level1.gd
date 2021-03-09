@@ -34,6 +34,7 @@ func get_tile(mouse_pos):
 	return cell_pos
 #function for player click
 func _input(event):
+	
 	if event is InputEventMouseButton and event.is_pressed():
 		var clicked = get_tile(event.position)
 		#detect if tile is there
@@ -51,9 +52,16 @@ func _input(event):
 			if vars.lives <= 0:
 				game_over()
 			$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
+	
 	if event is InputEventKey:
 		if event.scancode == KEY_ESCAPE:
 			get_tree().quit()
+	else:
+		var hover = get_tile(event.position)
+		if tile.get_cell(hover.x, hover.y) == 0:
+			$Follow.show()
+		else:
+			$Follow.hide()
 #detect collision with player
 
 #enter high score on game over

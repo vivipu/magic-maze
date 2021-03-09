@@ -66,6 +66,12 @@ func _input(event):
 	if event is InputEventKey:
 		if event.scancode == KEY_ESCAPE:
 			get_tree().quit()
+	else:
+		var hover = get_tile(event.position)
+		if tile.get_cell(hover.x, hover.y) == 0:
+			$Follow.show()
+		else:
+			$Follow.hide()
 #enter high score on game over
 func _on_Button2_pressed():
 	var name = $"CanvasLayer/Control/Counter/HighScore/NameEntry".text

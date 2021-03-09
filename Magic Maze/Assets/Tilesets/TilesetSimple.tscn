@@ -9,6 +9,7 @@ extents = Vector2( 8, 8 )
 polygon = PoolVector2Array( -7.99772, -8.03397, -7.93939, 8.00669, 7.98461, 8.00669, 7.92628, -7.97564 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 55.6812, 32.0723 )
 scale = Vector2( 1.35, 1.35 )
 
 [node name="Sprite" type="Sprite" parent="."]

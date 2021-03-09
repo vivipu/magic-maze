@@ -14,20 +14,6 @@ func _ready():
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
 	$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
 	$CanvasLayer/Control/Counter/Label3.text = str(vars.score)
-	#section to decide whether to remove any pickups; might change this for 
-	#find how many pickups there are
-	#var pickup_size = get_tree().get_nodes_in_group("pickup").size()
-	#create an array of pickups
-	#var pickups = get_tree().get_nodes_in_group("pickup")
-	#create counter	
-	#var counter = vars.score
-	#if difference between current and original score
-	#if (vars.score - instanced.score) <= pickup_size and vars.score != 0:
-	#	for x in pickups:
-	#		pickup_size -= 1
-	#		x.queue_free()
-	#		if pickup_size == 0:
-	#			break
 func kill():
 	vars.moves = 0
 	$CanvasLayer/Control/Counter/Label.text = str(vars.moves)
@@ -66,6 +52,12 @@ func _input(event):
 	if event is InputEventKey:
 		if event.scancode == KEY_ESCAPE:
 			get_tree().quit()
+	else:
+		var hover = get_tile(event.position)
+		if tile.get_cell(hover.x, hover.y) == 0:
+			$Follow.show()
+		else:
+			$Follow.hide()
 #enter high score on game over
 func _on_Button2_pressed():
 	var name = $"CanvasLayer/Control/Counter/HighScore/NameEntry".text
