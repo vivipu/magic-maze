@@ -1,11 +1,12 @@
 extends Control
 
-onready var fadeInRect = $FadeIn
 onready var vars = get_node("/root/Global")
-#set score to 0
+
 func _ready():
+	#play title screen music
 	if get_node("/root/MusicTitle").playing == false:
 		get_node("/root/MusicTitle").play()
+	#set these values back to default when the player is on the title screen
 	vars.score = 0
 	vars.lives = 3
 	vars.moves = 3
@@ -25,7 +26,5 @@ func _on_Quit_pressed():
 	get_tree().quit()
 func _on_Instructions_pressed():
 	get_tree().change_scene("res://Scenes/Other/Instructions.tscn")
-
-
 func _on_Credits_pressed():
 	get_tree().change_scene("res://Scenes/Other/Credits.tscn")

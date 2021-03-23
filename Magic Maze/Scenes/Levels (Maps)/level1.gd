@@ -32,9 +32,9 @@ onready var tile = get_node("TileMap")
 func get_tile(mouse_pos):
 	var cell_pos = tile.world_to_map(mouse_pos) 
 	return cell_pos
-#function for player click
+#input function
 func _input(event):
-	
+	#player click
 	if event is InputEventMouseButton and event.is_pressed():
 		var clicked = get_tile(event.position)
 		#detect if tile is there
@@ -52,18 +52,17 @@ func _input(event):
 			if vars.lives <= 0:
 				game_over()
 			$CanvasLayer/Control/Counter/Label2.text = str(vars.lives)
-	
+	#game exit 
 	if event is InputEventKey:
 		if event.scancode == KEY_ESCAPE:
 			get_tree().quit()
+	#tile highlighting
 	else:
 		var hover = get_tile(event.position)
 		if tile.get_cell(hover.x, hover.y) == 0:
 			$Follow.show()
 		else:
 			$Follow.hide()
-#detect collision with player
-
 #enter high score on game over
 func _on_Button2_pressed():
 	var name = $"CanvasLayer/Control/Counter/HighScore/NameEntry".text
